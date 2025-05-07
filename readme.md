@@ -8,10 +8,13 @@ This repository contains a comprehensive analysis of an e-commerce platform's pe
 
 ## Project Structure
 
+- **Data Cleaning Notebooks**:
+  - `data_cleaning.ipynb` - Performs data cleaning and transformation steps
+
 - **Analysis Notebooks**:
-  - `Sales_performance_analysis.py` - Analyzes product sales and temporal patterns
-  - `Profitability_cost_analysis.py` - Examines profitability drivers and cost impacts
-  - `Customer_segmentation_analysis.py` - Segments customers and analyzes behavior
+  - `Sales_performance_analysis.ipynb` - Analyzes product sales and temporal patterns
+  - `Profitability_cost_analysis.ipynb` - Examines profitability drivers and cost impacts
+  - `Customer_segmentation_analysis.ipynb` - Segments customers and analyzes behavior
 
 - **Utilities**:
   - `ecommerce_utils.py` - Common utility functions for data loading, formatting, and visualization
