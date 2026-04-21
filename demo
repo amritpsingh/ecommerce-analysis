@@ -1,0 +1,49 @@
+-- Demo exceptions table for sandbox use.
+-- Schema mirrors ExceptionLogger._SCHEMA exactly.
+CREATE TABLE IF NOT EXISTS socpophousdata1_dev.development_amrit.demo_exceptions (
+    observation_id         STRING    NOT NULL,
+    run_id                 STRING    NOT NULL,
+    task_key               STRING    NOT NULL,
+    source_table           STRING,
+    target_table           STRING,
+    validation_level       STRING    NOT NULL,
+    event_type             STRING    NOT NULL,
+    error_code             STRING    NOT NULL,
+    severity               STRING    NOT NULL,
+    message                STRING,
+    response_id            STRING,
+    collection_instance_id STRING,
+    variable_name          STRING,
+    is_blocking            BOOLEAN   NOT NULL,
+    stack_trace            STRING,
+    created_timestamp_utc  TIMESTAMP NOT NULL
+)
+USING DELTA
+COMMENT 'Demo exceptions table — sandbox-scoped for interactive logger testing.'
+TBLPROPERTIES (
+    'delta.enableChangeDataFeed' = 'false',
+    'demo_owner' = 'amrit'
+);
+
+
+-- Demo events table for sandbox use.
+-- Schema mirrors EventLogger._SCHEMA exactly.
+CREATE TABLE IF NOT EXISTS socpophousdata1_dev.development_amrit.demo_events (
+    observation_id         STRING    NOT NULL,
+    run_id                 STRING    NOT NULL,
+    task_key               STRING    NOT NULL,
+    source_table           STRING,
+    target_table           STRING,
+    event_type             STRING    NOT NULL,
+    rule_name              STRING,
+    message                STRING,
+    response_id            STRING,
+    collection_instance_id STRING,
+    variable_name          STRING,
+    created_timestamp_utc  TIMESTAMP NOT NULL
+)
+USING DELTA
+COMMENT 'Demo events table — sandbox-scoped for interactive logger testing.'
+TBLPROPERTIES (
+    'demo_owner' = 'amrit'
+);
